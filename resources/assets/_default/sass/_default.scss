@@ -1,0 +1,42 @@
+#app {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.bank-logo {
+    max-width: 100px;
+    width: 100%;
+}
+
+.panel {
+    margin-top: 30px;
+}
+
+form {
+    padding: 20px;
+}
+
+.filter-group {
+    .btn {
+        float: right;
+        height: 3rem;
+        line-height: 3rem;
+    }
+    .filter-wrapper {
+        overflow: hidden;
+        padding-right: 10px;
+    }
+}
+
+table {
+    th {
+        a {
+            color: #000;
+        }
+    }
+}

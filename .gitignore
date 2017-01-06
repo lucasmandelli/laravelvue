@@ -1,0 +1,10 @@
+/node_modules
+/storage
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+resources/assets/spa/js/config.js
+/public/storage
+!storage/framework/

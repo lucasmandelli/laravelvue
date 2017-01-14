@@ -26,9 +26,17 @@ Route::group(['middleware' => 'cors', 'as' => 'api.'], function() {
             return Auth::guard('api')->user();
         })->name('user');
 
-        Route::resource('bank_accounts', 'Api\BankAccountsController', ['except' => ['create', 'edit']]);
+        Route::resource('bank-accounts', 'Api\BankAccountsController', ['except' => ['create', 'edit']]);
 
         Route::resource('banks', 'Api\BanksController', ['only' => 'index']);
+
+        Route::get('bills-pay/status', 'Api\BillsPayController@status')->name('bills-pay.status');
+        Route::get('bills-pay/total', 'Api\BillsPayController@total')->name('bills-pay.total');
+        Route::resource('bills-pay', 'Api\BillsPayController', ['except' => ['create', 'edit']]);
+
+        Route::get('bills-receive/status', 'Api\BillsReceivedController@status')->name('bills-receive.status');
+        Route::get('bills-receive/total', 'Api\BillsReceivedController@total')->name('bills-receive.total');
+        Route::resource('bills-receive', 'Api\BillsReceivedController', ['except' => ['create', 'edit']]);
 
     });
 

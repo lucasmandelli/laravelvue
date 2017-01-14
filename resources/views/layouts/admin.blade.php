@@ -28,11 +28,11 @@
                     $menuConfig = [
                         'name' => Auth::user()->name,
                         'menus' => [
-                            ['name' => 'Bancos', 'url' => route('admin.banks.index'), 'active' => isRouteActive('admin.banks.index')],
-                            ['name' => 'Contas a pagar', 'url' => '/bill-pay', 'dropdownId' => 'bill-pay'],
-                            ['name' => 'Contas a receber', 'url' => '/bill-receive', 'dropdownId' => 'bill-receive']
+                            ['name' => 'Banks', 'url' => route('admin.banks.index'), 'active' => isRouteActive('admin.banks.index')],
+                            /*['name' => 'Contas a pagar', 'url' => '/bill-pay', 'dropdownId' => 'bill-pay'],
+                            ['name' => 'Contas a receber', 'url' => '/bill-receive', 'dropdownId' => 'bill-receive']*/
                         ],
-                        'menusDropdown' => [
+                        /*'menusDropdown' => [
                             [
                                 'id' => 'bill-pay',
                                 'items' => [
@@ -47,7 +47,7 @@
                                     ['name' => 'Criar conta', 'url' => '/criar']
                                 ]
                             ]
-                        ],
+                        ],*/
                         'urlLogout' => env('URL_ADMIN_LOGOUT'),
                         'csrfToken' => csrf_token()
                     ]

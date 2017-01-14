@@ -26,7 +26,7 @@
                         <td>{{ account.agency }}</td>
                         <td>{{ account.account }}</td>
                         <td>
-                            <img :src="account.bank.data.logo" class="bank-logo responsive-img" />
+                            <img :src="account.bank.data.logo" class="bank-logo" />
                             {{ account.bank.data.name }}
                         </td>
                         <td>

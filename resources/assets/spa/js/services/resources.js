@@ -16,7 +16,27 @@ export class Jwt {
 }
 
 let User = Vue.resource('user');
-let BankAccount = Vue.resource('bank_accounts{/id}');
+let BankAccount = Vue.resource('bank-accounts{/id}');
 let Bank = Vue.resource('banks');
+let BillsPay = Vue.resource('bills-pay{/id}', {}, {
+    status: {
+        method: 'GET',
+        url: 'bills-pay/status/'
+    },
+    total: {
+        method: 'GET',
+        url: 'bills-pay/total/'
+    }
+});
+let BillsReceived = Vue.resource('bills-receive{/id}', {}, {
+    status: {
+        method: 'GET',
+        url: 'bills-receive/status/'
+    },
+    total: {
+        method: 'GET',
+        url: 'bills-receive/total/'
+    }
+});
 
-export {User, BankAccount, Bank};
+export {User, BankAccount, Bank, BillsPay, BillsReceived};

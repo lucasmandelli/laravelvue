@@ -24,12 +24,8 @@
                         </div>
                         <div class="input-field col s6">
                             <label for="bank-id" class="active">Bank</label>
-                            <!--<select v-model="bankAccount.bank_id" id="bank_id" class="browser-default">
-                                <option value="" disabled selected >Choose...</option>
-                                <option v-for="bank in banks" :value="bank.id" >{{ bank.name }}</option>
-                            </select>-->
                             <input type="text" id="bank-id" placeholder="Choose a bank" autocomplete="off"
-                                data-activates="bank-id-dropdown" data-beloworigin="true" />
+                                data-activates="bank-id-dropdown" data-beloworigin="true" v-model="bankAccount.bank.data.name" />
                             <ul id="bank-id-dropdown" class="dropdown-content ac-dropdown"></ul>
                         </div>
                     </div>
@@ -103,9 +99,8 @@
                 }
             },
             getBankAccount(id){
-                BankAccount.get({id: id}).then((response) => {
+                BankAccount.get({id: id, include: 'bank'}).then((response) => {
                     this.bankAccount = new BankAccountClass(response.data.data);
-                    console.log(this.bankAccount);
                 });
             },
             getBanks() {

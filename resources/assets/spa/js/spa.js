@@ -4,6 +4,8 @@ require('materialize-css');
 
 window.Vue = require('vue');
 
+require('./filters');
+
 require('vue-resource');
 Vue.http.options.root = appConfig.api_url;
 

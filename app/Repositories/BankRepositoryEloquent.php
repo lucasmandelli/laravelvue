@@ -62,7 +62,7 @@ class BankRepositoryEloquent extends BaseRepository implements BankRepository
 
         $this->skipPresenter = $skipPresenter;
 
-        return $this->parserResult(bank);
+        return $this->parserResult($bank);
     }
 
     public function update(array $attributes, $id)
@@ -83,7 +83,7 @@ class BankRepositoryEloquent extends BaseRepository implements BankRepository
 
         $this->skipPresenter = $skipPresenter;
 
-        return $this->parserResult(bank);
+        return $this->parserResult($bank);
     }
 
     public function delete($id)

@@ -35,11 +35,27 @@ $factory->state(User::class, 'admin', function(Faker\Generator $faker) {
 
 
 $factory->define(BankAccount::class, function (Faker\Generator $faker) {
-    static $password;
-
     return [
         'name' => $faker->city,
         'agency' => rand(1000, 10000),
         'account' => rand(10000, 70000) . '-' . rand(0,9)
+    ];
+});
+
+$factory->define(\FinancialSystem\Models\BillPay::class, function (Faker\Generator $faker) {
+    return [
+        'date_due' => $faker->dateTimeThisDecade,
+        'name' => $faker->word,
+        'value' => $faker->randomFloat,
+        'done' => $faker->boolean,
+    ];
+});
+
+$factory->define(\FinancialSystem\Models\BillReceived::class, function (Faker\Generator $faker) {
+    return [
+        'date_due' => $faker->dateTimeThisDecade,
+        'name' => $faker->word,
+        'value' => $faker->randomFloat,
+        'done' => $faker->boolean,
     ];
 });

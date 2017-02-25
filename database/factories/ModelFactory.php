@@ -59,3 +59,15 @@ $factory->define(\FinancialSystem\Models\BillReceived::class, function (Faker\Ge
         'done' => $faker->boolean,
     ];
 });
+
+$factory->define(\FinancialSystem\Models\Client::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name
+    ];
+});
+
+$factory->define(\FinancialSystem\Models\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name
+    ];
+});

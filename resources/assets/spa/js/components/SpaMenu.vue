@@ -57,7 +57,8 @@
                     {name: "Dashboard", routeName: 'dashboard'},
                     {name: "Bank Accounts", dropdownId: 'bank-account'},
                     {name: "Bills Pay", dropdownId: 'bills-pay'},
-                    {name: "Bills Received", dropdownId: 'bills-receive'}
+                    {name: "Bills Received", dropdownId: 'bills-receive'},
+                    {name: "Categories", routeName: 'category.list'}
                 ],
                 menuDropdown: [
                     {

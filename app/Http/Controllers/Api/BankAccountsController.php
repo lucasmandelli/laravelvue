@@ -4,11 +4,7 @@ namespace FinancialSystem\Http\Controllers\Api;
 
 use FinancialSystem\Http\Controllers\Controller;
 use FinancialSystem\Http\Controllers\Response;
-use Illuminate\Http\Request;
 
-use FinancialSystem\Http\Requests;
-use Prettus\Validator\Contracts\ValidatorInterface;
-use Prettus\Validator\Exceptions\ValidatorException;
 use FinancialSystem\Http\Requests\BankAccountCreateRequest;
 use FinancialSystem\Http\Requests\BankAccountUpdateRequest;
 use FinancialSystem\Repositories\BankAccountRepository;

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5e423d82f9d2cb18429c5156904bc542",
-    "content-hash": "b6d6f68908994e4d7949a5f4a16c527e",
+    "hash": "a7869f0bf968b16aeb5b61bc4bec0165",
+    "content-hash": "71f27fa6c479f7f8d7dcab212b194bb3",
     "packages": [
         {
             "name": "barryvdh/laravel-cors",
@@ -215,6 +215,54 @@
             "time": "2015-11-06 14:35:42"
         },
         {
+            "name": "hipsterjazzbo/landlord",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/HipsterJazzbo/Landlord.git",
+                "reference": "4828c32f811ae3d7989524015ea9b0773ddecf56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/HipsterJazzbo/Landlord/zipball/4828c32f811ae3d7989524015ea9b0773ddecf56",
+                "reference": "4828c32f811ae3d7989524015ea9b0773ddecf56",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.2.*|5.3.*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "laravel/framework": "5.2.*|5.3.*",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "5.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HipsterJazzbo\\Landlord\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Caleb Fidecaro",
+                    "email": "calebfidecaro@gmail.com"
+                }
+            ],
+            "description": "A simple, single database multi-tenancy solution for Laravel 5.2+",
+            "keywords": [
+                "multitenancy",
+                "multitenant",
+                "tenancy",
+                "tenant"
+            ],
+            "time": "2016-11-29 23:37:17"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -358,6 +406,60 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "kalnoy/nestedset",
+            "version": "v4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lazychaser/laravel-nestedset.git",
+                "reference": "c7584ba0daa059f1f339f7d163f3042fd7d1d65d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lazychaser/laravel-nestedset/zipball/c7584ba0daa059f1f339f7d163f3042fd7d1d65d",
+                "reference": "c7584ba0daa059f1f339f7d163f3042fd7d1d65d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.2.*|5.3.x",
+                "illuminate/events": "5.2.*|5.3.x",
+                "illuminate/support": "5.2.*|5.3.x",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "v4.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kalnoy\\Nestedset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kalnoy",
+                    "email": "lazychaser@gmail.com"
+                }
+            ],
+            "description": "Nested Set Model for Laravel 4-5",
+            "keywords": [
+                "database",
+                "hierarchy",
+                "laravel",
+                "nested sets",
+                "nsm"
+            ],
+            "time": "2016-12-19 08:36:51"
         },
         {
             "name": "laravel/framework",

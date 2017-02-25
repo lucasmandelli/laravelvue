@@ -11,6 +11,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+
+        $clientRepository = app(\FinancialSystem\Repositories\ClientRepository::class);
+        $clients = $clientRepository->all();
+
         factory(\FinancialSystem\Models\User::class, 1)
             ->states('admin')
             ->create([
@@ -18,10 +22,17 @@ class UsersTableSeeder extends Seeder
                 'email' => 'admin@user.com'
             ]);
 
-        factory(\FinancialSystem\Models\User::class, 1)
-            ->create([
-                'name' => 'Cliente 1',
-                'email' => 'client@user.com'
-            ]);
+        foreach (range(1, 50) as $num) {
+            factory(\FinancialSystem\Models\User::class, 1)
+                ->create([
+                    'name' => "Cliente $num",
+                    'email' => "client$num@user.com"
+                ])
+                ->each(function ($user) use($clients) {
+                    $client = $clients->random();
+                    $user->client()->associate($client);
+                    $user->save();
+                });
+        }
     }
 }

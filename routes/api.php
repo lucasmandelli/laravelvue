@@ -38,6 +38,8 @@ Route::group(['middleware' => 'cors', 'as' => 'api.'], function() {
         Route::get('bills-receive/total', 'Api\BillsReceivedController@total')->name('bills-receive.total');
         Route::resource('bills-receive', 'Api\BillsReceivedController', ['except' => ['create', 'edit']]);
 
+        Route::resource('categories', 'Api\CategoriesController', ['except' => ['create', 'edit']]);
+
     });
 
 });

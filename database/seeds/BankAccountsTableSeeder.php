@@ -4,6 +4,9 @@ use Illuminate\Database\Seeder;
 
 class BankAccountsTableSeeder extends Seeder
 {
+
+    use \FinancialSystem\Repositories\GetClientsTrait;
+
     /**
      * Run the database seeds.
      *
@@ -11,22 +14,23 @@ class BankAccountsTableSeeder extends Seeder
      */
     public function run()
     {
-        /** @var \FinancialSystem\Repositories\BankRepository $bankRepository */
-        $bankRepository = app(\FinancialSystem\Repositories\BankRepository::class);
-        $bankRepository->skipPresenter(true);
 
-        $banks = $bankRepository->all();
+        $banks = $this->getBanks();
+        $clients = $this->getClients();
 
-        $max = 15;
+        $max = 20;
         $bankAccountId = rand(1, $max);
 
         factory(\FinancialSystem\Models\BankAccount::class, $max)
             ->make()
-            ->each(function($bankAccount) use($banks, $bankAccountId) {
+            ->each(function($bankAccount) use($banks, $bankAccountId, $clients) {
 
                 $bank = $banks->random();
 
+                $client = $clients->random();
+
                 $bankAccount->bank_id = $bank->id;
+                $bankAccount->client_id = $client->id;
 
                 $bankAccount->save();
 
@@ -36,4 +40,14 @@ class BankAccountsTableSeeder extends Seeder
                 }
             });
     }
+
+    private function getBanks()
+    {
+        /** @var \FinancialSystem\Repositories\BankRepository $bankRepository */
+        $bankRepository = app(\FinancialSystem\Repositories\BankRepository::class);
+        $bankRepository->skipPresenter(true);
+
+        return $bankRepository->all();
+    }
+
 }

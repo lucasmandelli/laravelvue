@@ -4,6 +4,9 @@ use Illuminate\Database\Seeder;
 
 class BillsPayTableSeeder extends Seeder
 {
+
+    use \FinancialSystem\Repositories\GetClientsTrait;
+
     /**
      * Run the database seeds.
      *
@@ -11,6 +14,18 @@ class BillsPayTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\FinancialSystem\Models\BillPay::class, 10)->create();
+
+        $clients = $this->getClients();
+
+        factory(\FinancialSystem\Models\BillPay::class, 10)
+            ->make()
+            ->each(function($billPay) use($clients) {
+
+                $client = $clients->random();
+
+                $billPay->client_id = $client->id;
+                $billPay->save();
+
+            });
     }
 }

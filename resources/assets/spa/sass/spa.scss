@@ -12,6 +12,7 @@
 @import "node_modules/materialize-css/sass/materialize";
 
 @import "../../_default/sass/default";
+@import "../../_default/sass/select2-materialize";
 
 .spinner {
     @extend .progress;
@@ -22,4 +23,25 @@
     position: fixed;
     width: 100%;
     z-index: 998;
+}
+
+.category-list {
+    @extend .collection;
+        border: none;
+        margin: 0;
+        overflow: visible;
+
+    .category-child {
+        @extend .collection-item;
+            padding-left: 50px;
+    }
+
+    .category-icon {
+        line-height: 36px;
+        height: 36px;
+        i {
+            line-height: inherit;
+            height: inherit;
+        }
+    }
 }

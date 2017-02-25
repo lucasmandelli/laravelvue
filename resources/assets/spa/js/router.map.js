@@ -10,6 +10,8 @@ import BillPayCreateComponent from './components/bill-pay/BillPayCreate.vue';
 import BillReceivedComponent from './components/bill-receive/BillReceive.vue';
 import BillReceivedListComponent from './components/bill-receive/BillReceiveList.vue';
 import BillReceivedCreateComponent from './components/bill-receive/BillReceiveCreate.vue';
+import CategoryComponent from './components/category/Category.vue';
+import CategoryListComponent from './components/category/CategoryList.vue';
 
 export default {
     '/login': {
@@ -32,19 +34,23 @@ export default {
         subRoutes: {
             '/': {
                 name: 'bank-account.list',
-                component: BankAccountListComponent
+                component: BankAccountListComponent,
+                auth: true
             },
             '/create': {
                 name: 'bank-account.create',
-                component: BankAccountCreateComponent
+                component: BankAccountCreateComponent,
+                auth: true
             },
             '/:id/update': {
                 name: 'bank-account.update',
-                component: BankAccountCreateComponent
+                component: BankAccountCreateComponent,
+                auth: true
             },
             '/:id/delete': {
                 name: 'bank-account.delete',
-                component: BankAccountListComponent
+                component: BankAccountListComponent,
+                auth: true
             }
         }
     },
@@ -53,19 +59,23 @@ export default {
         subRoutes: {
             '/': {
                 name: 'bills-pay.list',
-                component: BillPayListComponent
+                component: BillPayListComponent,
+                auth: true
             },
             '/create': {
                 name: 'bills-pay.create',
-                component: BillPayCreateComponent
+                component: BillPayCreateComponent,
+                auth: true
             },
             '/:id/update': {
                 name: 'bills-pay.update',
-                component: BillPayCreateComponent
+                component: BillPayCreateComponent,
+                auth: true
             },
             '/:id/delete': {
                 name: 'bills-pay.delete',
-                component: BillPayListComponent
+                component: BillPayListComponent,
+                auth: true
             }
         }
     },
@@ -74,20 +84,29 @@ export default {
         subRoutes: {
             '/': {
                 name: 'bills-receive.list',
-                component: BillReceivedListComponent
+                component: BillReceivedListComponent,
+                auth: true
             },
             '/create': {
                 name: 'bills-receive.create',
-                component: BillReceivedCreateComponent
+                component: BillReceivedCreateComponent,
+                auth: true
             },
             '/:id/update': {
                 name: 'bills-receive.update',
-                component: BillReceivedCreateComponent
+                component: BillReceivedCreateComponent,
+                auth: true
             },
             '/:id/delete': {
                 name: 'bills-receive.delete',
-                component: BillReceivedListComponent
+                component: BillReceivedListComponent,
+                auth: true
             }
         }
+    },
+    '/categories': {
+        name: 'category.list',
+        component: CategoryComponent,
+        auth: true
     }
 }

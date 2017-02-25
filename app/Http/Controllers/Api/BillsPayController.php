@@ -5,8 +5,6 @@ namespace FinancialSystem\Http\Controllers\Api;
 use FinancialSystem\Http\Controllers\Controller;
 use FinancialSystem\Http\Controllers\Response;
 
-use Prettus\Validator\Contracts\ValidatorInterface;
-use Prettus\Validator\Exceptions\ValidatorException;
 use FinancialSystem\Http\Requests\BillPayCreateRequest;
 use FinancialSystem\Http\Requests\BillPayUpdateRequest;
 use FinancialSystem\Repositories\BillPayRepository;

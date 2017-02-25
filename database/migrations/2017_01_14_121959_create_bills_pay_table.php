@@ -13,7 +13,7 @@ class CreateBillsPayTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('bill_pays', function(Blueprint $table) {
+		Schema::create('bills_pay', function(Blueprint $table) {
             $table->increments('id');
 
             $table->dateTime('date_due');
@@ -32,7 +32,7 @@ class CreateBillsPayTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('bill_pays');
+		Schema::drop('bills_pay');
 	}
 
 }

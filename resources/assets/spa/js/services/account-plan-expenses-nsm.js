@@ -1,4 +1,4 @@
-import {Category} from './resources';
+import {AccountPlanExpenses} from './resources';
 
 export class CategoryFormat {
 
@@ -54,7 +54,7 @@ export class CategoryService {
             delete categoryCopy.parent_id;
         }
 
-        return Category.save(categoryCopy).then(response => {
+        return AccountPlanExpenses.save(categoryCopy).then(response => {
             let categoryAdded = response.data.data;
 
             if(categoryAdded.parent_id === null) {
@@ -76,7 +76,7 @@ export class CategoryService {
 
         let self = this;
 
-        return Category.update({id: categoryCopy.id}, categoryCopy).then(response => {
+        return AccountPlanExpenses.update({id: categoryCopy.id}, categoryCopy).then(response => {
             let categoryUpdated = response.data.data;
 
             if(categoryUpdated.parent_id === null) {
@@ -145,7 +145,7 @@ export class CategoryService {
 
     static destroy(category, parent, categories) {
 
-        return Category.delete({id: category.id}).then(response => {
+        return AccountPlanExpenses.delete({id: category.id}).then(response => {
 
             if(parent) {
 

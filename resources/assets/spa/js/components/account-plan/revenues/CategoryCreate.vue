@@ -33,8 +33,8 @@
 </template>
 
 <script type="text/javascript">
-    import ModalComponent from '../../../../_default/components/Modal.vue';
-    import SelectMaterialComponent from '../../../../_default/components/SelectMaterial.vue';
+    import ModalComponent from '../../../../../_default/components/Modal.vue';
+    import SelectMaterialComponent from '../../../../../_default/components/SelectMaterial.vue';
 
     export default {
         components: {

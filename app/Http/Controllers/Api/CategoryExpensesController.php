@@ -6,19 +6,19 @@ use FinancialSystem\Criteria\FindRootCategoriesCriteria;
 use FinancialSystem\Criteria\WithDepthCategoriesCriteria;
 use FinancialSystem\Http\Controllers\Controller;
 
-use FinancialSystem\Http\Requests\CategoryRequest;
-use FinancialSystem\Repositories\CategoryRepository;
+use FinancialSystem\Http\Requests\CategoryExpenseRequest;
+use FinancialSystem\Repositories\CategoryExpenseRepository;
 
 
-class CategoriesController extends Controller
+class CategoryExpensesController extends Controller
 {
 
     /**
-     * @var CategoryRepository
+     * @var CategoryExpenseRepository
      */
     protected $repository;
 
-    public function __construct(CategoryRepository $repository)
+    public function __construct(CategoryExpenseRepository $repository)
     {
         $this->repository = $repository;
         $this->repository->pushCriteria(new WithDepthCategoriesCriteria());
@@ -33,27 +33,27 @@ class CategoriesController extends Controller
     public function index()
     {
         $this->repository->pushCriteria(new FindRootCategoriesCriteria());
-        $categories = $this->repository->all();
+        $categoryExpenses = $this->repository->all();
 
-        return $categories;
+        return $categoryExpenses;
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  CategoryRequest $request
+     * @param  CategoryExpenseRequest $request
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryRequest $request)
+    public function store(CategoryExpenseRequest $request)
     {
-        $category = $this->repository->skipPresenter()->create($request->all());
+        $categoryExpense = $this->repository->skipPresenter()->create($request->all());
 
         $this->repository->skipPresenter(false);
 
-        $category = $this->repository->find($category->id);
+        $categoryExpense = $this->repository->find($categoryExpense->id);
 
-        return response()->json($category, 201);
+        return response()->json($categoryExpense, 201);
     }
 
 
@@ -66,29 +66,29 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $category = $this->repository->find($id);
+        $categoryExpense = $this->repository->find($id);
 
-        return response()->json($category);
+        return response()->json($categoryExpense);
     }
 
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  CategoryRequest $request
+     * @param  CategoryExpenseRequest $request
      * @param  string            $id
      *
      * @return Response
      */
-    public function update(CategoryRequest $request, $id)
+    public function update(CategoryExpenseRequest $request, $id)
     {
-        $category = $this->repository->skipPresenter()->update($request->all(), $id);
+        $categoryExpense = $this->repository->skipPresenter()->update($request->all(), $id);
 
         $this->repository->skipPresenter(false);
 
-        $category = $this->repository->find($category->id);
+        $categoryExpense = $this->repository->find($categoryExpense->id);
 
-        return response()->json($category);
+        return response()->json($categoryExpense);
     }
 
 

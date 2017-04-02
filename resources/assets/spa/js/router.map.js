@@ -11,7 +11,8 @@ import BillReceivedComponent from './components/bill-receive/BillReceive.vue';
 import BillReceivedListComponent from './components/bill-receive/BillReceiveList.vue';
 import BillReceivedCreateComponent from './components/bill-receive/BillReceiveCreate.vue';
 import CategoryComponent from './components/category/Category.vue';
-import CategoryListComponent from './components/category/CategoryList.vue';
+import AccountPlanRevenuesComponent from './components/account-plan/revenues/Category.vue';
+import AccountPlanExpensesComponent from './components/account-plan/expenses/Category.vue';
 
 export default {
     '/login': {
@@ -107,6 +108,16 @@ export default {
     '/categories': {
         name: 'category.list',
         component: CategoryComponent,
+        auth: true
+    },
+    '/account-plan-revenues': {
+        name: 'account-plan-revenues',
+        component: AccountPlanRevenuesComponent,
+        auth: true
+    },
+    '/account-plan-expenses': {
+        name: 'account-plan-expenses',
+        component: AccountPlanExpensesComponent,
         auth: true
     }
 }

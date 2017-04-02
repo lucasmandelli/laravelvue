@@ -8,7 +8,7 @@ use Kalnoy\Nestedset\NodeTrait;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
-class Category extends Model implements Transformable
+class CategoryExpense extends Model implements Transformable
 {
     use TransformableTrait;
     use BelongsToTenants;

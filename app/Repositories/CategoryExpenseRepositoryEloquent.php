@@ -2,17 +2,17 @@
 
 namespace FinancialSystem\Repositories;
 
-use FinancialSystem\Presenters\CategoryPresenter;
+use FinancialSystem\Presenters\CategoryExpensePresenter;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use FinancialSystem\Repositories\CategoryRepository;
-use FinancialSystem\Models\Category;
+use FinancialSystem\Repositories\CategoryExpenseRepository;
+use FinancialSystem\Models\CategoryExpense;
 
 /**
- * Class CategoryRepositoryEloquent
+ * Class CategoryExpenseRepositoryEloquent
  * @package namespace FinancialSystem\Repositories;
  */
-class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepository
+class CategoryExpenseRepositoryEloquent extends BaseRepository implements CategoryExpenseRepository
 {
     /**
      * Specify Model class name
@@ -21,8 +21,10 @@ class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepos
      */
     public function model()
     {
-        return Category::class;
+        return CategoryExpense::class;
     }
+
+    
 
     /**
      * Boot up the repository, pushing criteria
@@ -37,12 +39,12 @@ class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepos
      */
     public function presenter()
     {
-        return CategoryPresenter::class;
+        return CategoryExpensePresenter::class;
     }
 
     public function create(array $attributes)
     {
-        Category::$enableTenant = false;
+        CategoryExpense::$enableTenant = false;
 
         if(isset($attributes['parent_id'])) {
 
@@ -63,14 +65,14 @@ class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepos
 
         }
 
-        Category::$enableTenant = true;
+        CategoryExpense::$enableTenant = true;
 
         return $result;
     }
 
     public function update(array $attributes, $id)
     {
-        Category::$enableTenant = false;
+        CategoryExpense::$enableTenant = false;
 
         if(isset($attributes['parent_id'])) {
 
@@ -94,8 +96,9 @@ class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepos
 
         }
 
-        Category::$enableTenant = true;
+        CategoryExpense::$enableTenant = true;
 
         return $result;
     }
+
 }

@@ -39,6 +39,8 @@ Route::group(['middleware' => 'cors', 'as' => 'api.'], function() {
         Route::resource('bills-receive', 'Api\BillsReceivedController', ['except' => ['create', 'edit']]);
 
         Route::resource('categories', 'Api\CategoriesController', ['except' => ['create', 'edit']]);
+        Route::resource('categories-revenues', 'Api\CategoryRevenuesController', ['except' => ['create', 'edit']]);
+        Route::resource('categories-expenses', 'Api\CategoryExpensesController', ['except' => ['create', 'edit']]);
 
     });
 

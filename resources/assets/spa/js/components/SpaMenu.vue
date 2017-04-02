@@ -56,9 +56,9 @@
                 menus: [
                     {name: "Dashboard", routeName: 'dashboard'},
                     {name: "Bank Accounts", dropdownId: 'bank-account'},
-                    {name: "Bills Pay", dropdownId: 'bills-pay'},
-                    {name: "Bills Received", dropdownId: 'bills-receive'},
-                    {name: "Categories", routeName: 'category.list'}
+                    {name: "Bills", dropdownId: 'bills'},
+                    {name: "Account Plan", routeName: 'account-plan-revenues'},
+                    {name: "Categories", routeName: 'category.list'},
                 ],
                 menuDropdown: [
                     {
@@ -69,17 +69,10 @@
                         ]
                     },
                     {
-                        id: 'bills-pay',
+                        id: 'bills',
                         items: [
-                            {id: 0, name: "List bills", routeName: 'bills-pay.list'},
-                            {id: 1, name: "Create bill", routeName: 'bills-pay.create'}
-                        ]
-                    },
-                    {
-                        id: 'bills-receive',
-                        items: [
-                            {id: 0, name: "List bills", routeName: 'bills-receive.list'},
-                            {id: 1, name: "Create bill", routeName: 'bills-receive.create'}
+                            {id: 0, name: "Bills Pay", routeName: 'bills-pay.list'},
+                            {id: 1, name: "Bills Receive", routeName: 'bills-receive.list'}
                         ]
                     },
                 ],

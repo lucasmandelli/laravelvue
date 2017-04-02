@@ -1,10 +1,25 @@
 <template>
     <div class="row">
         <div class="col s12 z-depth-2 panel">
-            <h3 class="center">Categories</h3>
+            <h3 class="center">Account Plans</h3>
 
             <div class="container">
                 <div class="divider"></div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col offset-s4 s4">
+                        <ul class="tabs">
+                            <li class="tab col s6">
+                                <a v-link="{name: 'account-plan-revenues'}" class="active" >Revenues</a>
+                            </li>
+                            <li class="tab col s6">
+                                <a v-link="{name: 'account-plan-expenses'}" >Expenses</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <category-list :categories="categories"></category-list>
@@ -43,11 +58,11 @@
 </template>
 
 <script type="text/javascript">
-    import {Category} from '../../services/resources';
+    import {AccountPlanRevenues} from '../../../services/resources';
     import CategoryListComponent from './CategoryList.vue';
     import CategoryCreateComponent from './CategoryCreate.vue';
-    import {CategoryFormat, CategoryService} from '../../services/category-nsm';
-    import ModalComponent from '../../../../_default/components/Modal.vue';
+    import {CategoryFormat, CategoryService} from '../../../services/account-plan-revenues-nsm';
+    import ModalComponent from '../../../../../_default/components/Modal.vue';
 
     export default {
         components: {
@@ -95,7 +110,7 @@
         },
         methods: {
             getCategories() {
-                Category.query().then(response => {
+                AccountPlanRevenues.query().then(response => {
                     this.categories = response.data.data;
                     this.formatCategories();
                 });
